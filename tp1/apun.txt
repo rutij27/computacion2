@@ -1,0 +1,35 @@
+Tabla de archivos, i-node
+ls -li apuntes.txt -> me muestra el i-node
+ls -lh me muestra el peso de ese directorio
+ls -ld me muestra la informacion de ese directorio, este va a tener 4k, que informacion guarda
+el directorio es una lista de los archivos que tiene dentro
+du -sh . 
+
+**Enlaces**
+ln -s archivoorigen enlace(como un acceso directo, se llama enlace sinbolico soft-link)
+ls archivooriginal enlace(este es un hardlink)
+
+si hago ls -l no me muestra que ninguno es un link, el archivo original y el hardlink, esto es porque son dos archivos que 
+estan relacionado entre si y ningun tiene una carectistica como que ninguno es enlace de otro
+si borro el archivo origin el hardlink sigue ahi con el contenido
+es como un espejo, es una copia pero se modifican los dos si mnodifico uno
+si muestro los i-nodos con ls -li tienen el mismo i-nodo, son dos nombres distintos para los mismo bloques en disco
+son dos nombres que apuntan al mismo bloque en el disco
+despues de los permisos no dice la cantidad de hardlinks(de accesos) que tiene es archivo
+cuando borramos, se borran los datos en la tabla de archivos, es como un borrado logico pero no fisico, no se borra el bloque
+que esta en el disco
+archivos .a libreria de enlace statico
+archivos .so libreria de enlace dinamico
+binarios ejecutables
+
+hay una forma de decirle al bash que lo ejecute diferente
+#!/usr/bin/python3
+#!/usr/bin/python2 para cambiar el interprete
+
+
+**redireccion**
+entrada estandar, salida estandar, salida eror
+ls pts, son las terminales unix nativas los tty
+
+paralelismo
+el sistem es una llamada al sistema bloqueante, es decir se ejecuta el codigo y bloque el sistema

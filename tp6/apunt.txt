@@ -1,0 +1,34 @@
+Señales
+
+Una señal es una notificacion asincronica porque no espera respuesta y porque el remitente no sabe cuando va a llegar
+Todos los procesos pueden recivir señales de cualquier otro en cualquier momento sin estar esperandola
+Que pueden hacer los procesos con esas señales?
+Depende como este configurado el proceso
+Puedo configurar el proceso para que realice una determinada accion segun la señal recivida
+con jobs veo los procesos suspendidos
+fg lo mando de nuevo al primer plano
+kill -9 es matar = kill -KILL, kill -PIPE, kill -TERM
+kill -CONT para reactivar un proceso
+kill - 2 es interrupcion
+kill -l ver todas las señales
+kill 13 SIGPIPE, cuando lanzo un pipe el proceso lanza una señal sigpipe
+
+/dev/null estoy redireccionando la salida estandar, /dev/null es un dispositivo del sistema que es un ajuguero negro, 
+
+kill -USR1 pid para enviar una señal por ejemplo al proceso ipython3
+ipython3
+os.getpid()
+def funncion_hola(s, f):
+    print("hola mundo", s) <- si imprimo s es el numero de señal que estoy reciviendo
+
+Comportamientos:
+signal.signal(signal.SIGUSR1, signal.SIG_IGN) <- Ignora la señal
+signal.signal(signal.SIGUSR1, signal.SIG_DFL) <- Hacer el comportamiento por defecto
+signal.signal(signal.SIGUSR1, funcion_hola) <- Cuando recivo la señal USR1 llamo a la funcion funcion_hola, ejecutar una funcion
+la funcion se la conoce como handler o el manejardor de la señal
+
+stack de proceso, en el mapa de memoria de proceso, es una pila que va guardando los punteros que indican la direccion de memoria, entonces cuando el programa se va encontrando funciones va apilando y cuando terminan va desapilando y volviendo al lugar anteriro
+
+SIGKILL y SIGSTOP no pueden ser ingnoradas ni capturadas
+signal.SIGALRM = signal.VTALARM(macos)
+signal.alarm(segundos) setea un temporizador que te avisa cuando pasan los segundos

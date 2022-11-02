@@ -1,0 +1,1 @@
+python3 matriz_pool.py -p 4 -f matriz.txt -c pot

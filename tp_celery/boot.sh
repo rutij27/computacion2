@@ -1,0 +1,1 @@
+python3 matriz.py -f matriz.txt -c pot 
